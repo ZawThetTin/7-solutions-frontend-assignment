@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import { Item, ItemWithId } from '@/types/item';
-import Column from '@/components/auto-delete-todo/Column';
 import { isFruit } from '@/helpers/is-fruit';
+import Column from '@/components/auto-delete-todo/auto-delete-column';
 import { isVegetable } from '@/helpers/is-vegetable';
+import AutoDeleteItem from '@/components/auto-delete-todo/auto-delete-item';
 
 interface Props {
 	data: Item[];
@@ -89,25 +90,31 @@ export default function AutoDeleteTodo({ data }: Props) {
 	};
 
 	return (
-		<div className='flex min-h-screen items-center justify-center bg-zinc-50 font-sans text-3xl font-semibold text-zinc-900 dark:bg-black dark:text-zinc-50'>
-			<div className='flex-1'>
+		<div className='flex-1 flex flex-wrap gap-3 text-zinc-900 dark:text-zinc-50 max-w-[800px] mx-auto my-10'>
+			<div className='flex-1 basis-50 flex flex-col gap-1 p-2'>
 				{items.map(item => (
-					<div key={item.id}>
-						<button
-							className='m-2 rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600'
-							onClick={() => handleClassify(item.id)}>
-							{item.name}
-						</button>
-					</div>
+					<AutoDeleteItem key={item.id} onClick={() => handleClassify(item.id)}>
+						{item.name}
+					</AutoDeleteItem>
 				))}
 			</div>
 
-			<div className='flex-1'>
-				<Column data={vegetables} onRemove={handleRemove} />
+			<div className='flex-1 basis-50  rounded-md border border-zinc-300 dark:border-zinc-700'>
+				<div className='text-center bg-zinc-200 dark:bg-zinc-800 p-2 font-medium'>
+					Fruits
+				</div>
+				<div className='p-2 flex flex-col gap-1'>
+					<Column data={fruits} onRemove={handleRemove} />
+				</div>
 			</div>
 
-			<div className='flex-1'>
-				<Column data={fruits} onRemove={handleRemove} />
+			<div className='flex-1 basis-50 rounded-md border border-zinc-300 dark:border-zinc-700'>
+				<div className='text-center bg-zinc-200 dark:bg-zinc-800 p-2 font-medium'>
+					Vegetables
+				</div>
+				<div className='p-2 flex flex-col gap-1'>
+					<Column data={vegetables} onRemove={handleRemove} />
+				</div>
 			</div>
 		</div>
 	);

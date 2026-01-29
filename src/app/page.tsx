@@ -1,13 +1,15 @@
-import AutoDeleteTodo from '@/components/auto-delete-todo/AutoDeleteTodo';
+import AutoDeleteTodo from '@/components/auto-delete-todo';
 import { DUMMY_DATA } from '@/data/dummy-items';
 import Loading from '@/components/shared/loading';
 import { Suspense } from 'react';
 
 export default function Home() {
 	return (
-		<Suspense fallback={<Loading />}>
-			<FetchData />
-		</Suspense>
+		<main className='flex w-screen h-screen overflow-auto'>
+			<Suspense fallback={<Loading />}>
+				<FetchData />
+			</Suspense>
+		</main>
 	);
 }
 
