@@ -1,102 +1,36 @@
-# Assignment
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## 1. Auto Delete Todo List
+## Getting Started
 
-```
-    [
-        {
-            type: 'Fruit',
-            name: 'Apple',
-        },
-        {
-            type: 'Vegetable',
-            name: 'Broccoli',
-        },
-        {
-            type: 'Vegetable',
-            name: 'Mushroom',
-        },
-        {
-            type: 'Fruit',
-            name: 'Banana',
-        },
-        {
-            type: 'Vegetable',
-            name: 'Tomato',
-        },
-        {
-            type: 'Fruit',
-            name: 'Orange',
-        },
-        {
-            type: 'Fruit',
-            name: 'Mango',
-        },
-        {
-            type: 'Fruit',
-            name: 'Pineapple',
-        },
-        {
-            type: 'Vegetable',
-            name: 'Cucumber',
-        },
-        {
-            type: 'Fruit',
-            name: 'Watermelon',
-        },
-        {
-            type: 'Vegetable',
-            name: 'Carrot',
-        },
-    ]
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Please make a todo list that
-- Have a list of clickable buttons.
-- Each button will be moved into its own column separated by type.
-- Once moved, each button will have 5 seconds on the screen and then will be moved back to the bottom of the main list.
-- If click on the right column (Fruit/Vegetable) the item must go back to the bottom of the left column (list) immediately.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-> [!CAUTION]
-> Please host the test on a hosting service and send us the link.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-See example in the link below
-[Video Link](https://drive.google.com/file/d/170AYx0lOXs4DLyZiPGGIgmQpFhwTKNih/view?usp=sharing)
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Please do your best to show your best solution
-we are looking for
-1. Answer the need of question
-2. Clean code easy to read
+## Learn More
 
-Bonus: if you have multiple solutions we could discuss those theories in our interview (no need to submit multiple versions, just send us the best one you think.)
+To learn more about Next.js, take a look at the following resources:
 
-## 2. Create data from API *(OPTIONAL)*
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-API from <https://dummyjson.com/users>
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Your project must use Typescript, Typescript module, and HTTP framework (GRPC is plus)
-- Tranforms JSON data from API to new data groupBy department
-- We encourage you to write tests, which we will give you some extra score
-- We will give you an extra score if you focus on performance.
+## Deploy on Vercel
 
---- sample response ---
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-```json
-    {
-        [Department]: {
-            "male": 1,                      // ---> Male Count Summary
-            "female": 1,                    // ---> Female Count Summary
-            "ageRange": "XX-XX",            // ---> Range
-            "hair": {                       // ---> "Color": Color Summary
-                "Black": 1,                
-                "Blond": 1,
-                "Chestnut": 1,
-                "Brown": 1
-            },
-            "addressUser": {                // ---> "firstNamelastName": postalCode
-                "TerryMedhurst": "XXXXX",
-            }
-        }
-    }, 
-    ...
-```
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
