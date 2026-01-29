@@ -13,7 +13,14 @@ interface Props {
 
 export default function AutoDeleteTodo({ data }: Props) {
 	const [items, setItems] = useState<ItemWithId[]>(
-		() => data.map(item => ({ ...item, id: crypto.randomUUID() })), // Backend should provide the data with IDs, otherwise we will add id like this
+		/**
+		 * Note: This commenting is only for interview process.
+		 * To better explain the integration.
+		 * No need to write such comment on production code
+		 *
+		 * Backend should provide the data with IDs, otherwise we will add id like this
+		 */
+		() => data.map(item => ({ ...item, id: crypto.randomUUID() })),
 	);
 	const [vegetables, setVegetables] = useState<ItemWithId[]>([]);
 	const [fruits, setFruits] = useState<ItemWithId[]>([]);
@@ -21,6 +28,10 @@ export default function AutoDeleteTodo({ data }: Props) {
 
 	const handleRemove = (item: ItemWithId) => {
 		/**
+		 * Note: This commenting is only for interview process.
+		 * To better explain the integration.
+		 * No need to write such comment on production code
+		 *
 		 * Remove item from fruits or vegetables state by id and move it back to data
 		 * Find the timer id from timerIds state by item id and clear the timeout
 		 */
@@ -49,6 +60,10 @@ export default function AutoDeleteTodo({ data }: Props) {
 
 	const handleClassify = (id: ItemWithId['id']) => {
 		/**
+		 * Note: This commenting is only for interview process.
+		 * To better explain the integration.
+		 * No need to write such comment on production code
+		 *
 		 * Find the item in data by id
 		 * If the item is a fruit, add it to the fruits state
 		 * If the item is a vegetable, add it to the vegetables state
@@ -99,7 +114,7 @@ export default function AutoDeleteTodo({ data }: Props) {
 				))}
 			</div>
 
-			<div className='flex-1 basis-50  rounded-md border border-zinc-300 dark:border-zinc-700'>
+			<div className='flex-1 basis-50 rounded-md border border-zinc-300 dark:border-zinc-700'>
 				<div className='text-center bg-zinc-200 dark:bg-zinc-800 p-2 font-medium'>
 					Fruits
 				</div>
