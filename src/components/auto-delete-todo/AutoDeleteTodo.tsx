@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Item, ItemWithId } from '@/types/item';
-import Column from '@/components/Column';
+import Column from '@/components/auto-delete-todo/Column';
 import { isFruit } from '@/helpers/is-fruit';
 import { isVegetable } from '@/helpers/is-vegetable';
 
